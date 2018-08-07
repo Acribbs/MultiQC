@@ -233,6 +233,10 @@ top_modules: []
 module_order:
     # MultiQC general module for catching output from custom scripts
     - 'custom_content'
+    - bam2stats:
+        module_tag:
+            - RNA
+            - DNA
     # Post-alignment QC
     - conpair:
         module_tag:

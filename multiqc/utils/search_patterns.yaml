@@ -2,6 +2,11 @@
 # Default configurations for how modules can find their log files.
 # Loaded by the config module so that these patterns can be overwritten in user config files.
 
+bam2stats/nm:
+    fn: '*.readstats.nm'
+    num_lines: 8
+bam2stats/mapq:
+    fn: '*.readstats.mapq'
 adapterRemoval:
     fn: '*.settings'
     contents: 'AdapterRemoval'

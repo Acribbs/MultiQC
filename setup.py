@@ -65,6 +65,7 @@ setup(
     install_requires = install_requires,
     entry_points = {
         'multiqc.modules.v1': [
+            'bam2stats = multiqc.modules.bam2stats:MultiqcModule',
             'adapterRemoval = multiqc.modules.adapterRemoval:MultiqcModule',
             'afterqc = multiqc.modules.afterqc:MultiqcModule',
             'bamtools = multiqc.modules.bamtools:MultiqcModule',

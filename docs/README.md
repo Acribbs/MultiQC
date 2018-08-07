@@ -78,6 +78,7 @@ MultiQC Modules:
     verifyBAMID: modules/verifybamid.md
 Custom Content:
   Introduction: custom_content.md
+  bam2stats: modules/bam2stats.md
 Coding with MultiQC:
   Writing new modules: modules.md
   Plotting Functions: plots.md
