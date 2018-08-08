@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+""" MultiQC module to parse the output of featurecounts for bespoke plotting"""
+
+from __future__ import print_function
+from collections import OrderedDict
+import logging
+import re
+
+from multiqc import config
+from multiqc.plots import bargraph
+from multiqc.modules.base_module import BaseMultiqcModule
+
+# Initialise the logger
+log = logging.getLogger(__name__)
+
+class MultiqcModule(BaseMultiqcModule):
+    """custom featurecounts output module, parses output logs. """
+
+    def __init__(self):
+
+        # Initialise the parent object
+        super(MultiqcModule, self).__init__(name="Feature count", anchor="feature_counting",
+        href='',
+        info="This output plots the counts of reads to features, given your mapped bam file")
+
+        # Init data
+        self.bam2stats_data = dict()
+        
+        # parse nm log
+        for f in self.find_log_files('feature_counting/nm'):
+            self.bam2stats_data[f['s_name'].replace(".readstats.nm","")] = self.parse_bam2stats_logs(f['f'])

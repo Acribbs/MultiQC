@@ -65,6 +65,7 @@ setup(
     install_requires = install_requires,
     entry_points = {
         'multiqc.modules.v1': [
+            'feature_counting = multiqc.modules.feature_counting:MultiqcModule',
             'bam2stats_mapq = multiqc.modules.bam2stats_mapq:MultiqcModule',
             'bam2stats_nm = multiqc.modules.bam2stats_nm:MultiqcModule',
             'adapterRemoval = multiqc.modules.adapterRemoval:MultiqcModule',
